@@ -24,7 +24,7 @@ jobs:
 
     - name: Compile
       run: |
-       haxe -cp source -main *.hx
+       haxe build.hxml
       
     - name: Build
       run: |
@@ -33,8 +33,8 @@ jobs:
 
     - name: Create artifact
       run: |
-        mkdir -p artifacts
-        cp export/build/android/bin
+       mkdir -p artifacts
+       cp export/build/android/bin
 
     - name: upload
       uses: actions/upload-artifact@v2
